@@ -1,0 +1,15 @@
+body {
+background-color : gray;  
+}
+
+h1 {
+   font-family: "Arial Black";
+ 
+}
+
+p {
+   color: orange;
+   border: 1px solid blue;
+}
+
+#prof {color: white;}
