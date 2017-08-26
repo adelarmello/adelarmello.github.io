@@ -1,15 +1,23 @@
 body {
-background-color : gray;  
+     background-color : gray;  /**/
 }
 
 h1 {
-   font-family: "Arial Black";
+   font-family: Arial;
  
 }
 
 p {
-   color: orange;
-   border: 1px solid blue;
+    border-width: 6px;
+    border-style: solid;
+    border-color: green;
 }
 
 #prof {color: white;}
+
+
+.special {
+
+   border: 3px  dashed orange
+
+}
