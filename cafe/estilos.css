@@ -1,0 +1,14 @@
+p {
+	margin-left: 15px; 
+	padding:1.5em;
+	}
+
+h3 {
+	color: #f00;
+	}
+
+h2 {
+	color: #fc0;
+	text-align: center;
+	font: italic 9pt Verdana, Sans-serif;
+	}	
