@@ -7,8 +7,14 @@ h3 {
 	color: #f00;
 	}
 
-h2 {
-	color: #fc0;
-	text-align: center;
-	font: italic 9pt Verdana, Sans-serif;
-	}	
+a {
+	color : #cc33ff; /*muda a cor do link*/
+	text-decoration: none; /*remove o link sublinhado*/
+}
+
+
+a: hover {  /*aplica quando o mouse por cima*/
+	color: #ff6600; 
+	text-decoration: underline; /*muda a cor do link*/
+	font-size: 50px;
+}
