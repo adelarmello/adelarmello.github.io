@@ -1,5 +1,7 @@
 table {
 	border-collapse: collapse;
+	text-align: center;
+	width: 50%;
 }
 
 th, td {
@@ -16,4 +18,18 @@ td{
 
 .titulo {
 	background-color: gray;
+}
+
+.bordaimg {
+	
+	padding: 2px;
+	background-color: silver;
+	width: 30%;
+}
+
+.tabela2 {
+     border-collapse: collapse;
+	text-align: center;
+	width: 5%;
+
 }
