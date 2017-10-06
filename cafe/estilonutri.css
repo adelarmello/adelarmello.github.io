@@ -1,0 +1,48 @@
+td, th {
+border: 1px solid #000000;
+padding: 5px; /*Espaço ao redor das células*/
+}
+th {
+	background-color: #483D8B
+}
+td {
+	background-color: #CDC9C9;
+}
+table{
+width: 40%;
+font-family: verdana;
+border-collapse: collapse;
+}
+
+.nome {
+	background-color: #483D8B;
+	font-family: verdana;
+	font-size: 15px;
+	color:#ffffff;
+	font-weight: bold
+}
+.valoresnutri{
+	text-align: center;
+
+	
+}
+.legenda{
+	background-color: #CDC9C9; 
+	font-size: 12px;
+	color: #8B8989
+}
+h1{
+	color:#A0522D;
+
+}
+h3{
+	color:#A0522D;
+}
+h2{
+	border-bottom: 5px solid;
+	color:#A0522D;
+
+}
+h4{
+	color:#A0522D;
+}
