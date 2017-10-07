@@ -21,3 +21,7 @@ a: hover {  /*aplica quando o mouse por cima*/
 h2 {
 	background-color: red;
 }
+
+.imagemfundo{
+background-image:url(papaeldeparede.jpg);
+}
