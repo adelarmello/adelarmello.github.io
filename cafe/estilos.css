@@ -25,3 +25,15 @@ h2 {
 .imagemfundo{
 background-image:url(papaeldeparede.jpg);
 }
+.linha2 {
+	text-align: right;
+
+}
+.coluna{
+
+}
+table{
+width: 40%;
+font-family: verdana;
+border-collapse: collapse;
+}

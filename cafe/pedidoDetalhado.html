@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pedido Detalhado</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+ <body>
+ <form action="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi" method="post">
+ <table>
+  <tr> 
+  <th colspan="2" class="formheader"> Dados de contato</th>
+
+  </tr>
+
+  <tr>
+  	<tr><td class="coluna"> Nome completo: </td> <td class="linha2" required="" placeholder="Joao da Silva"> <input type="text" size="40" name="nome"></td>  </tr>
+
+  	<tr><td class="coluna"> Email: </td> <td class="linha2"><input type="text" size="40" name="email" required="" placeholder="nome@email.com"> </td></tr>
+
+  	<tr><td class="coluna">Telefone: </td> <td class="linha2"><input type="tel" name="fone" required="" placeholder="(55) 99875643"></td>          </tr>
+
+  </tr>
+   <th colspan="2" class="formheader"> Informações do Pedido </th>
+  </tr> 
+  
+
+ Escolha a varieda de dos grãos:<br>
+ <select name="selecionado">
+  <option>Grãos da Colômbia</option>
+  <option>Grãos do Brasil</option>
+  <option>Grãos da Bolívia</option>
+  <option>Grãos do Chile</option>
+
+  </select> <br>
+
+ Tipo:<br>
+ <input type="radio" name="g" value="GI">Grãos Inteiros<br>
+ <input type="radio" name="g" value="GM" checked="GM">Grãos Moídos<br><br>
+ Extras:<br>
+ <input type="checkbox" name="o" value="opcao1">Embalar para presente<br>
+ <input type="checkbox" name="o" value="opcao2" checked="opcao2">Quero um catálago com cafés especiais<br><br>
+ <h2>Dados de entrega</h2>
+ 
+ Endereço:
+ <input type="text" name="endereco"><br><br>
+ Cidade/Estado:
+ <input type="text" name="cidade"><br><br>
+ CEP:
+ <input type="text" name="cep"><br><br>
+ Observações:<br>
+ <textarea name="observacao" ></textarea><br><br>
+
+ <input type="submit" value="Enviar pedido" name="">
+
+ </form>
+ </table>
+ </body>
+</html>
