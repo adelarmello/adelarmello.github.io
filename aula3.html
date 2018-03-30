@@ -30,11 +30,11 @@
    $v = valor;
 
    if ($v > 10){
-       echo"<h1>O valor é maior que 10 </h1>"
+       echo"<h1>O valor é maior que 10 </h1>";
    }else if($v < 10){
-       echo"<h1>O valor é menor que 10 </h1>"
+       echo"<h1>O valor é menor que 10 </h1>";
    }else {
-       echo"<h1>O valor é 10 </h1>"
+       echo"<h1>O valor é 10 </h1>";
    }
 
       //echo ($v>10)? "O valor é maior que 10":"O valor é menor que 10"//outra opção
@@ -74,6 +74,8 @@
       }else{
           echo"Valor Negativo";
       }
+      
+
    }
   ?>
 
@@ -117,6 +119,9 @@
          }else{
               echo".$valorB.$valorA.";
          }
+
+
+
     }
 
   ?>
@@ -145,6 +150,11 @@
           $p = $_POST["peso"];
           $a = $_POST["altura"];
 
+          
+
+
+
+
 
    }
   ?>
@@ -156,16 +166,60 @@
 
           $salario = $_POST["salario"];
 
+  
 
            if ($salario <= 300){
-             $Novosalario = $salario + ($salario * 0.5)   //reajuste de 50%
+             $Novosalario = $salario + ($salario * 0.5);   //reajuste de 50%
               echo"Seu novo saário é $Novosalario";
            }else {
-             $Novosalario = $salario + ($salario * 0.3)    //reajuste de 30%
+             $Novosalario = $salario + ($salario * 0.3);    //reajuste de 30%
                echo"Seu novo saário é $Novosalario"; 
            }
    
 
    }
+
+  ?>
+  
+
+
+ <?php //atividade 09
+      if (isset($_POST["valor"]){
+
+          $v = $_POST["valor"];
+
+           for ($i = 0; $i<=$v; $i++){
+
+            echo"$i ";
+                 
+           
+           }
+
+     }
+
+ ?>
+
+
+  <?php //refazer
+  $num = 9;
+
+  $calc = 1;
+
+    while ($num > 1){
+
+      $calc *= $num;
+   
+      $num--;
+}
+
+echo $calc;
+    } 
+
+$fat = $_POST['fat'];
+$resul = 1;
+	for($i = $fat; $i > 1; $i--){
+		$resul *= $fat; 
+		$fat--;
+	}
 
   ?>
