@@ -21,3 +21,151 @@
   </body>
 
 </html
+<?php
+
+ if ( isset($-POST["v_digitado"])){;//testa se tem valor digitado
+
+   $valor = $_POST["v_digitado"];
+
+   $v = valor;
+
+   if ($v > 10){
+       echo"<h1>O valor é maior que 10 </h1>"
+   }else if($v < 10){
+       echo"<h1>O valor é menor que 10 </h1>"
+   }else {
+       echo"<h1>O valor é 10 </h1>"
+   }
+
+      //echo ($v>10)? "O valor é maior que 10":"O valor é menor que 10"//outra opção
+ }
+
+?>
+
+ <?php
+   if ( isset($-POST["v_digitado"])){//testa se tem valor digitado
+
+      $valor = $_POST["v_digitado"];
+
+      $v = $valor;
+  
+         if ($v >= 10){
+             echo"O valor é maior ou igual a 10";
+         }else{
+             echo"O valor não é maior ou igual a 10";
+         }
+
+   }
+
+ ?>
+
+
+  <?php // ver se um valor é positivo, negativo ou zero
+
+   if ( isset($-POST["v_digitado"])){//testa se tem valor digitado
+
+      $valor = $_POST["v_digitado"];
+      
+      $v = valor;
+      if ($V == 0){
+          echo "O Igual a Zero";
+      }else if($v > 0){
+          echo"Valor Positivo";
+      }else{
+          echo"Valor Negativo";
+      }
+   }
+  ?>
+
+
+  <?php
+   if(isset($_POST["valorA"] && isset($_POST["valorB"]) && isset($_POST["valorC"]) && isset($_POST["valorD"]))){;
+
+         $valorA = $_POST["valorA"];
+         $valorB = $_POST["valorB"];
+         $valorC = $_POST["valorC"];
+         $valorD = $_POST["valorD"];
+         
+          $soma = $valorA + $valorC;
+          $multiplicacao = $valorB * $valorC;
+
+          if ($soma > $multiplicacao){
+            echo"A+C é maior que B*C";
+          }else if ($soma < $multiplicacao){
+             echo"A+C é menor que B*C";  
+          }else{
+            echo"A+C é igual a B*C";
+          }
+
+  }
+
+  ?>
+
+
+
+
+  <?php // escrever em ordem crescente dois números
+
+    if(isset($_POST["valorA"] && isset($_POST["valorB"])){
+
+         $valorA = $_POST["valorA"];
+         $valorB = $_POST["valorB"];
+
+
+         if ($valorA < $valorB){
+              echo".$valorA.$valorB."; 
+         }else{
+              echo".$valorB.$valorA.";
+         }
+    }
+
+  ?>
+
+  <?php //atividade 06
+      if (isset($_POST["nota1"]) && isset($_POST["nota2"]) && isset($_POST["nota3"]) && isset($_POST["nota4"]) ){;
+  
+          $nota1 = $_POST["nota1"];
+          $nota2 = $_POST["nota2"];
+          $nota3 = $_POST["nota3"];
+          $nota4 = $_POST["nota4"];
+
+          $media = (float)$nota1+$nota2+$nota3+$nota4
+            
+           echo"($media>7.0)? "Aprovado":"Reprovado"; //utulizando o operador ternário para simplificar
+
+
+    } 
+  ?>
+
+
+  <?php //atividade 07 ver com o professor
+
+   if (isset($_POST["peso"]) && isset($_POST["altura"]) ){
+
+          $p = $_POST["peso"];
+          $a = $_POST["altura"];
+
+
+   }
+  ?>
+
+
+
+  <?php // atividade 08
+    if (isset($_POST["salario"]){
+
+          $salario = $_POST["salario"];
+
+
+           if ($salario <= 300){
+             $Novosalario = $salario + ($salario * 0.5)   //reajuste de 50%
+              echo"Seu novo saário é $Novosalario";
+           }else {
+             $Novosalario = $salario + ($salario * 0.3)    //reajuste de 30%
+               echo"Seu novo saário é $Novosalario"; 
+           }
+   
+
+   }
+
+  ?>
