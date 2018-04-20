@@ -1,1 +1,137 @@
 
+<html>
+ <head>
+	<title>index</title>
+	<meta charset="utf-8">
+
+ </head>
+  <body>
+  	<center>
+  	<form action="login.php" method="POST">
+
+  	<fieldset style="width:25%">
+
+      <legend>Identifique-se</legend>
+      Login <br>
+      <input type="text" name="login"><br><br>
+      Senha<br>
+      <input type="password" name="senha"><br><br>
+      <input type="submit" value="Ok" style="float:right">
+
+  </fieldset>
+
+  </form>
+
+  </center>
+  
+  <?php  
+ if ( isset($_POST["login"]) )
+  $login = $_POST["login"];
+ else 
+  $login = " ";
+
+ if ( isset($_POST["senha"]) ) 	
+  $senha = $_POST["senha"];
+else 
+	$senha = " ";
+
+if ($login == "adelar" && $senha == "123")
+	header("location: area.php");
+else 
+	header("location: index.html");
+ 
+ 
+ 
+?>
+<html>
+<head>
+	<title>Área</title>
+</head>
+<body>
+
+	  <form action="escolha.php" method="POST">
+	  	<fieldset style="width:40%">
+	  		<legend>Escolha a área prioritária</legend>
+
+	  		<br>
+	  		<select name="area">
+	  			<option value="S">Saúde</option>
+	  			<option value="E">Educação</option>
+	  			<option value ="D">Dormir</option>
+
+	  		</select>
+
+	  		<br>
+	  		<input type="submit" value = "Avançar">
+
+	  	</fieldset>
+
+
+
+	  </form>
+
+</body>
+</html>
+<?php
+ if (isset ($_POST["area"]) ) 
+
+   $area = $_POST["area"];
+ else
+ 	header("location: area.php"); // volta pra area.php se não marcar uma opção da área
+
+?>
+<html>
+<head>
+	<title>escolha </title>
+	<meta charset="utf-8">
+</head>
+ <body>
+ 	<center>
+ 		<form action="voto.php" method="POST">
+ 			<fieldset style="width:40%">
+ 				<legend>Escolha a sua prioridade</legend>
+ 				<select name="prioridade">
+ 				<?php
+ 				 if ($area=="S"){
+ 				 	echo "<option value='01'>Hospital Regional</option>";
+ 				 	echo "<option value='02'>Ambulância para o SAMU</option> ";
+ 				 }else {
+ 				 	if ($area == "E"){
+ 				 		echo "<option value ='03'> Hospital veterinário do IFFar</option>";
+ 				 		echo "<option value ='04'> Ampliação das vagas em creches </option>";
+ 				 	}
+ 				 
+ 				 }
+
+ 				?>
+
+ 				</select>
+ 				<input type="submit" value="Ok">
+
+ 			</fieldset>
+
+
+
+ 		</form>
+
+
+ 	</center>
+
+
+ </body>
+</html>
+<?php
+  if (isset($_POST["prioridade"]))
+    $voto = $_POST["prioridade"];
+  else 
+  	header("location: escolha.php");
+
+   date_default_timezone_set('America/Sao_Paulo');
+   $data = date ('d-m-Y H:i');
+
+  $arquivo = fopen("votos.txt", "a"); // a -> append r->read w->write
+  fwrite($arquivo,$data.";" .$voto."\r\n");  //escreve a opção escolhida na var $voto e quebrar a linha 
+  fclose($arquivo); 
+
+
+?>
