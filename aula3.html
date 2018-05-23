@@ -141,10 +141,10 @@ DELETE FROM FUNCIONARIO
 SELECT NOME, CPF, FONE FROM FUNCIONARIO;
 
 2--Faça uma consulta para retornar apenas o nome de todos os funcionários que trabalham no projeto com código 3
-
 SELECT NOME
 FROM FUNCIONARIO F, ALOCACAO A
 WHERE F.IDFUNC = A.ID_PROJ AND A.ID_PROJ = 3;
+
 3--Faça uma consulta para listar o nome e o orçamento do projeto com código 2 e 4.
 SELECT NOME, ORCAMENTO 
  FROM PROJETO
@@ -165,18 +165,25 @@ SELECT NOME, CPF, DESCRICAO
  WHERE F.ID_CAT = C.IDCAT;
  
 2--Faça uma consulta para retornar o nome de todos os Funcionários que trabalham no projeto de código 2.
-
 SELECT  NOME
  FROM FUNCIONARIO F, ALOCACAO A 
  WHERE A.ID_FUNC = F.IDFUNC AND A.ID_PROJ = 2;
  
 3--Faça uma consulta para retornar o nome de todos os projetos e os funcionários que trabalham neles. 
+SELECT  NOME AS NOME, DESCRICAO AS DESCRIÇÃO
+ FROM FUNCIONARIO F, PROJETO P, ALOCACAO A
+ WHERE F.IDFUNC = P.IDPROJ AND A.ID_FUNC;
 
 4--Faça uma consulta para retornar o nome, a descrição dacategoria e o salário de todos os funcionários quetrabalham no projeto de código 1.
+SELECT NOME AS NOME, DESCRICAO AS CATEGORIA, SALARIO AS SALÁRIO
+ FROM FUNCIONARIO F, CATEGORIA C, PEOJETO P, ALOCACAO A
+ WHERE F.IDFUNC = A.ID_FUNC AND A.ID_PROJ = 1 ;
+--TEM QUE APARECER 3 FUBCIONÁRIOS
 
 SELECT * FROM PROJETO;
 SELECT * FROM ALOCACAO;
 SELECT * FROM FUNCIONARIO;
+
 
  
 <html>
