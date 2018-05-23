@@ -184,6 +184,15 @@ SELECT * FROM PROJETO;
 SELECT * FROM ALOCACAO;
 SELECT * FROM FUNCIONARIO;
 
+--EXERCÍCIO 03
+1--Faça uma consulta para retornar o nome de todos os projetos com a metade do valor de orçamento de cada um.
+SELECT NOME, (ORCAMENTO / 2) AS ORÇAMENTO
+ FROM PROJETO;
+
+2--Faça uma consulta para retornar os dados da tabela CATEGORIA, simulando um aumento de 0,7% no salário de cada categoria
+SELECT * FROM CATEGORIA DESCRICAO AS DESCRIÇÃO, (SALARIO * 0.7)+ SALARIO) AS SALÁRIO 
+--CONTA É O SALÁRIO MULTIPLICADO PELA PORCENTAGEM QUE VAI DAR O RESJUSTE E NO FIM SOMA CON O SALÁRIO ESSE REAJUSTE.
+
 
  
 <html>
