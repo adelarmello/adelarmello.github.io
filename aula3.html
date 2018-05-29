@@ -213,6 +213,41 @@ SELECT NOME, ORCAMENTO
  SELECT NOME, CPF 
  FROM FUNCIONARIO F, CATEGORIA C
  WHERE F.ID_CAT = C.IDCAT AND SALARIO BETWEEN 1500.00 AND 3000.00
+
+					  
+					  
+ --EXECÍCIO 05, LIKE E NOT LIKE
+1--Listar todos os dados do funcionário “David Gilmour”
+SELECT * FROM FUNCIONARIO
+ WHERE NOME LIKE 'David Gilmour'
+
+2--Listar o nome e descrição da categoria de todos os funcionários que trabalham com nome “Projeto 1”
+SELECT NOME, DESCRICAO
+ FROM FUNCIONARIO F, CATEGORIA C, PROJETO P
+ WHERE FIDA_CAT = C.IDCAT AND P.NOME LIKE 'PROJETO1'
+
+3--Listar todos os dados dos funcionários da categoria “Estagiário”. 
+-- TESTAR DESSA MANEITA TBM: SELECT * FROM FUNCIONARIO 
+SELECT IDFUNC, NOME, CPF, FONE, ID_CAT
+ FROM FUNCIONARIO F, CATEGORIA C
+ WHERE F.ID_CAT = C.IDCAT AND DESCRICAO LIKE 'Estagiário'
+
+4--Listar o nome e CPF dos funcionários que começam com a letra “R”. 
+SELECT NOME AS NOME 
+ FROM FUNCIONARIO 
+ WHERE NOME LIKE 'R%'
+
+5--Listar o nome dos projetos e dos funcionários que possuem “ar” em algum lugar no nome.
+SELECT NOME AS NOME_FUNC, NOME AS NOME_PROJETO
+ FROM FUNCIONARIO F, CATEGORIA C, PROJETO P, ALOCACAO A
+ WHERE A.ID_FUNC = F.IDFUNC OR A.ID_PROJ = P.IDPROJA AND  NOME LIKE '%ar%'
+ --ver se é 'OR' OU 'AND'
+
+6--Listar o nome de todos os funcionários que não são estagiários.
+SELECT NOME 
+ FROM FUNCIONARIO F, CATEGORIA C 
+ WHERE F.ID_CAT = C.IDCAT AND DESCRICAO NOT LIKE 'Estagiários'
+
 					  
 					  
  
