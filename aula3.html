@@ -250,6 +250,28 @@ SELECT NOME
 
 					  
 					  
+					  
+--EXECÍCIO 06
+--Utilizando o operador IN, faça uma consulta para listar todos os funcionários que trabalham nos projetos de código 1 e 2.
+SELECT NOME 
+ FROM FUNCIONARIO F, PROJETO P, ALOCACAO A
+ WHERE F.IDFUNC = A.ID_FUNC AND P.IDPROJ = A.ID_PROJ AND P.IDPROJ IN (1, 2)
+ --TESTAR ASSIM TBM: WHERE  P.IDPROJ = A.ID_PROJ AND IDPROJ IN (1, 2)
+
+--Utilizando o operador NOT IN, faça uma consulta para retornar os dados dos funcionários que não são das categorias de código (3 e 4).
+SELECT FROM FUNCIONARIO
+ WHERE ID_CAT NOT IN (3, 4)
+
+--Faça uma consulta para retornar o nome, cpf e descrição da categoria de todos os funcionários que possuem telefone.
+SELECT NOME, CPF, DESCRICAO
+ FROM FUNCIONARIO F, CATEGORIA C
+ WHERE F.ID_CAT = C.IDCAT AND FONE IS NOT NULL
+					  
+--Faça uma consulta para retornar o nome de todos os funcionários que não possuem telefone.
+SELECT NOME 
+ FROM FUNCIONARIO
+ WHERE FONE IS NULL
+					  
  
 <html>
 
