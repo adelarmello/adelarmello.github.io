@@ -194,17 +194,27 @@ SELECT * FROM CATEGORIA DESCRICAO AS DESCRIÇÃO, (SALARIO * 0.7)+ SALARIO) AS S
 --CONTA É O SALÁRIO MULTIPLICADO PELA PORCENTAGEM QUE VAI DAR O RESJUSTE E NO FIM SOMA CON O SALÁRIO ESSE REAJUSTE.
 
 
-EXERCÍCIO 04
+--EXERCÍCIO 04
 1--Faça uma consulta para retornar a descrição de todas ascategorias que tem salário maior que R$ 2.500,00.
 SELECT DESCRICAO AS DESCRIÇÃO
  FROM CATEGORIA 
  WHERE SALARIO > 2.500
 2--Faça uma consulta para listar o nome e orçamento dosprojetos que tem orçamento maior que R$ 4.000,00 e tempode duração menor ou igual a 2 anos.
-
-3--Faça uma consulta para retornar a nome e o orçamento de todos os projetos que têm custo entre R$ 5.000,00 e R$15.000,00.
-
+ SELECT NOME AS NOME, ORCAMENTO AS ORÇAMENTO
+ FROM PROJETO 
+ WHERE ORCAMENTO > 4000.00 AND DURACAO <= 2
+					  
+3--Faça uma consulta para retornar a nome e o orçamento de todos os projetos que têm custo entre R$ 5.000,00 e R$15.000,00. 
+SELECT NOME, ORCAMENTO 
+ FROM PROJETO
+ WHERE ORCAMENTO BETWEEN 5000.00 ANS 15000.00
+					  
 4--Faça uma consulta para listar o nome e o CPF de todos osfuncionários que tem salário entre R$ 1.500,00 e R$ 3.000,00.
-
+ SELECT NOME, CPF 
+ FROM FUNCIONARIO F, CATEGORIA C
+ WHERE F.ID_CAT = C.IDCAT AND SALARIO BETWEEN 1500.00 AND 3000.00
+					  
+					  
  
 <html>
 
