@@ -135,3 +135,11 @@ else
 
 
 ?>
+
+It means a concept of simulation of the real world, closer to what is real. Objects are structures that carry data and behavior of
+their own and can exchange messages with each other in order to form something larger, a system. This object is a representation 
+of a real concept, it has states, operations (methods) and data (attributes).
+
+
+
+
