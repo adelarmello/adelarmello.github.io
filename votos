@@ -141,5 +141,12 @@ their own and can exchange messages with each other in order to form something l
 of a real concept, it has states, operations (methods) and data (attributes).
 
 
+The other paradigms of progrmation are:
+Paradigma Imperativo, as linguagens de programação que utilizam esse modelo são Asembler, C, Cobol, Ada, Fortran, Python, Pascal, Lua e ALGOL;
 
+Paradigma Estruturado, as linguagens de programação que utilizam esse modelo são C, Pascal, Cobol e Basic;
+
+Paradigma Funcional, as linguagens de programação que utilizam esse modelo são Haskell, Lambda(não implementada para computadores), ML(Criada em universidade), Miranda(Criada em universidade), LISP, Scheme(tentativa de simplificar e melhorar o LISP);
+
+Paradigma Lógico, as linguagens de programação que baseiam-se ou utilizam esse modelo são, Frill, Oz, Prolog, Mercury,Connver, QLISP, Planner, Popler;
 
