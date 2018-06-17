@@ -150,3 +150,12 @@ Paradigma Funcional, as linguagens de programação que utilizam esse modelo sã
 
 Paradigma Lógico, as linguagens de programação que baseiam-se ou utilizam esse modelo são, Frill, Oz, Prolog, Mercury,Connver, QLISP, Planner, Popler;
 
+
+
+Abstração: é abstrair algo do mundo real e transformar ele em um objeto na programção. Esse objeto tem uma identidade, propriedades e métodos, ou seja, características e ações;
+
+Encapsulamento: encapsular significa esconder, então o encapsulamento é acapacidade de um objeto possuir uma parte privada, acessível somente através dos métodos definidos na sua interface pública. Por exemplo, no mundo real, quando ligamos o ar condicionado, não sabemos o que está acontecendo internamente, então podemos dizer que os métodos que ligam o aparelho do ar condicionado estão encapsulados.
+
+Herança: significa que uma classe pode herdar as propriedades de uma outra classe. Com isso pode-se reaproveitar de códigos. Exemplo: em uma classe "veículo", tem uma placa, marca e ano de fabricação. E posso teruma subclasse chamada de carro e outra de caminhão que vão herdar as características da classe "veículo";
+
+Polimorfismo: poli- morfo = muitas formas de de se fazer alguma coisa. Permite que o mesmo nome represente vários comportamentos diferentes. É a alteração do funcionamento interno de um método herdado de um objeto pai.
