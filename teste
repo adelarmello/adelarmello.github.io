@@ -1,1 +1,408 @@
   
+CREATE TABLE PESQUISADOR(
+	idPesq serial not null,
+	nome varchar (15),
+	primary key (idPesq)
+);
+
+CREATE TABLE PROJETO(
+	idProj serial not null,
+	descricao varchar (200),
+	nEdital varchar (7), 
+	situacao varchar (15),
+	tipo varchar (10),
+	primary key (idProj)
+);
+
+CREATE TABLE PESQPROJ(
+	idProj int not null,
+	idPesq int not null,
+	nHoras int,
+	cargo varchar (50),
+	primary key (idProj, idPesq),
+	foreign key (idProj) references PROJETO (idProj),
+	foreign key (idPesq) references PESQUISADOR (idPesq)
+);
+
+-- inserts
+-- pesquisador
+insert into Pesquisador (nome)
+	values ('Oreste');
+	
+insert into Pesquisador (nome)
+	values ('João Vicente');
+
+insert into Pesquisador (nome)
+	values ('Vladslav');
+
+insert into Pesquisador (nome)
+	values ('Khalmir');
+
+insert into Pesquisador (nome)
+	values ('Sisay');
+
+insert into Pesquisador (nome)
+	values ('Gehardt');
+
+insert into Pesquisador (nome)
+	values ('James H.');
+
+insert into Pesquisador (nome)
+	values ('Kirk H.');
+
+insert into Pesquisador (nome)
+	values ('Lars U.');
+
+insert into Pesquisador (nome)
+	values ('Roberto T.');
+
+insert into Pesquisador (nome)
+	values ('Robert P.');
+
+insert into Pesquisador (nome)
+	values ('John F.');
+
+insert into Pesquisador (nome)
+	values ('Jimmy P.');
+
+insert into Pesquisador (nome)
+	values ('John P. J.');
+
+insert into Pesquisador (nome)
+	values ('John B.');
+
+insert into Pesquisador (nome)
+	values ('David G.');
+
+insert into Pesquisador (nome)
+	values ('Roger W.');
+
+insert into Pesquisador (nome)
+	values ('Richard W.');
+
+insert into Pesquisador (nome)
+	values ('Nick M.');
+
+-- inserts projetos
+insert into Projeto (descricao, nEdital, situacao, tipo)
+	values ('Informática básica para idosos', '03/2014', 'em andamento', 'extensão');
+
+insert into Projeto (descricao, nEdital, situacao, tipo)
+	values ('Escalonamento em clusters', '02/2014', 'em andamento', 'pesquisa');
+
+insert into Projeto (descricao, nEdital, situacao, tipo)
+	values ('Mateada cultural', '03/2012', 'em andamento', 'extensão');
+
+insert into Projeto (descricao, nEdital, situacao, tipo)
+	values ('Base de dados para sistemas pervasivos', '01/2013', 'concluido', 'pesquisa');
+
+insert into Projeto (descricao, nEdital, situacao, tipo)
+	values ('Adaptação dinâmica de interface', '01/2013', 'interrompido', 'pesquisa');
+
+-- inserts PesqProj
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (1, 1, 2, 'Coordenador/Orientador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (2, 2, 2, 'Coordenador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (3, 2, 4, 'Orientador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (4, 1, 20, 'Bolsista');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (5, 2, 8, 'Voluntário');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (6, 1, 4, 'Colaborador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (7, 2, 4, 'Coorientador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (8, 3, 2, 'Orientador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (9, 4, 4, 'Coordenador/Orientador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (10, 3, 20, 'Boslsista');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (11, 5, 2, 'Orientador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (12, 5, 2, 'Coordenador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (13, 5, 2, 'Coorientador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (14, 5, 20, 'Bolsista');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (15, 3, 8, 'Voluntário');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (16, 4, 4, 'Colaborador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (17, 4, 2, 'Coorientador');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (18, 4, 20, 'Bolsista');
+
+insert into PesqProj (idPesq, idProj, nHoras, Cargo)
+	values (19, 5, 4, 'Voluntário');
+
+
+-- Consultas
+-- a.	Obter a descrição e o número do edital de todos os projetos em andamento.
+SELECT
+	DESCRICAO, NEDITAL
+FROM
+	PROJETO
+WHERE
+	UPPER (SITUACAO) = 'EM ANDAMENTO'
+
+	
+-- b.	Obter o nome de todos os pesquisadores que trabalham no projeto intitulado “Mateada Cultural”.
+SELECT
+	PESQ.NOME
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PROJ.DESCRICAO) = 'MATEADA CULTURAL'
+
+	
+-- c.	Obter o nome e o cargo de todos os pesquisadores que trabalham em projetos de extensão.
+SELECT 
+	PESQ.NOME, PP.CARGO
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PROJ.TIPO) = 'EXTENSÃO'
+
+	
+-- d.	Obter a descrição de todos os projetos e seus respectivos coordenadores.
+SELECT 
+	PROJ.DESCRICAO, PESQ.NOME AS COORDENADOR
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) LIKE '%COORDENADOR%'
+
+	
+-- e.	Obter o nome de todos os bolsistas e o tipo de projeto em que cada um está envolvido.
+SELECT 
+	PESQ.NOME AS BOLSISTA, PROJ.TIPO AS TIPO_PROJETO
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) LIKE 'BOLSISTA'	
+
+	
+-- f.	Obter o nome de todos os colaboradores que atuam em projetos de pesquisa e a descrição do respectivo projeto.
+SELECT 
+	PESQ.NOME AS COLABORADOR, PROJ.DESCRICAO AS PROJETO
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) LIKE 'COLABORADOR' AND
+	UPPER (PROJ.TIPO) = 'PESQUISA'
+
+	
+-- g.	Obter o nome de todos os orientadores de projetos.
+SELECT 
+	DISTINCT PESQ.NOME AS ORIENTADOR
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	(PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) LIKE 'ORIENTADOR') OR 
+	(PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) LIKE 'COORDENADOR/ORIENTADOR')
+
+	
+-- h.	Obter o nome de todos os coordenadores, a descrição dos respectivos projetos e o número de horas trabalhado em cada projeto.
+SELECT 
+	PESQ.NOME AS COORDENADOR, PROJ.DESCRICAO AS PROJETO, PP.NHORAS
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) LIKE 'COORDENADOR%' 
+
+
+-- i.	Obter o nome e o cargo dos pesquisadores que trabalham mais de 4h em projetos de extensão.
+SELECT 
+	PESQ.NOME, PP.CARGO
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PROJ.TIPO) = 'EXTENSÃO' AND
+	PP.NHORAS > 4
+	
+	
+-- j.	Alterar o numero de horas dos bolsistas do projeto “Escalonamento em Clusters” para 16h.
+UPDATE
+	PESQPROJ
+SET
+	NHORAS = 16
+WHERE
+	IDPROJ IN ( SELECT IDPROJ
+		    FROM PROJETO
+		    WHERE UPPER (DESCRICAO) = 'ESCALONAMENTO EM CLUSTERS')
+	AND UPPER (CARGO) = 'BOLSISTA'
+
+	
+-- k.	Obter o nome e cargo dos coordenadores, orientadores e coorientadores que trabalham mais de 2 horas em qualquer tipo de projeto.
+SELECT 
+	PESQ.NOME, PP.CARGO
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	(PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) LIKE 'COORDENADOR%' AND
+	PP.NHORAS > 2) OR 
+	(PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) = 'ORIENTADOR' AND
+	PP.NHORAS > 2) OR 
+	(PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) LIKE 'COORIENTADOR' AND
+	PP.NHORAS > 2)
+-- l.	Desvincular de seus projetos (excluir da tabela PesqProj) todos os voluntários que trabalham mais de 5 horas em projetos de pesquisa.
+DELETE FROM 
+	PESQPROJ PP
+WHERE
+	NHORAS > 5 AND
+	UPPER (CARGO) = 'VOLUNTÁRIO' AND
+	IDPROJ IN (SELECT IDPROJ
+		   FROM PROJETO
+		   WHERE UPPER (TIPO) = 'PESQUISA')
+
+		   
+-- m.	Obter o nome e a quantidade de horas de todos os voluntários que trabalham em algum projeto.
+SELECT 
+	PESQ.NOME, PP.NHORAS
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PP.CARGO) = 'VOLUNTÁRIO' 
+	
+	
+-- n.	Obter o nome, o cargo e o número de horas de todos os pesquisadores que trabalham em projetos propostos em editais do ano 2013.
+SELECT 
+	PESQ.NOME, PP.CARGO, PP.NHORAS
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	PROJ.NEDITAL LIKE '%2013' 
+	
+	
+-- o.	Obter a descrição e a situação de todos os projetos em andamento, seguidos do nome do seu respectivo coordenador.
+SELECT 
+	PROJ.DESCRICAO AS PROJETO, PROJ.SITUACAO, PESQ.NOME AS COORDENADOR
+FROM
+	PESQUISADOR PESQ, PROJETO PROJ, PESQPROJ PP
+WHERE
+	PESQ.IDPESQ = PP.IDPESQ AND
+	PP.IDPROJ = PROJ.IDPROJ AND
+	UPPER (PROJ.SITUACAO) LIKE '%ANDAMENTO' 
+	
+	
+-- p. Obter o número de pesquisadores que trabalham em projetos de extensão.
+SELECT 
+	COUNT (IDPESQ) AS QUANTIDADE
+FROM 
+	PROJETO PROJ, PESQPROJ PP
+WHERE 
+	PROJ.IDPROJ = PP.IDPROJ AND
+	UPPER (PROJ.TIPO) = 'EXTENSÃO'
+
+
+-- q. Obter o número de pesquisadores que trabalham em cada tipo de projeto (Pesquisa e extensão).
+SELECT 
+	PROJ.TIPO, COUNT (IDPESQ) AS QUANTIDADE
+FROM 
+	PROJETO PROJ, PESQPROJ PP
+WHERE 
+	PROJ.IDPROJ = PP.IDPROJ
+GROUP BY
+	PROJ.TIPO
+	
+
+-- r. Obter a descrição de cada projeto e o número de pesquisadores atuando em cada um.
+SELECT
+	PROJ.DESCRICAO AS PROJETO, COUNT (PP.IDPESQ) AS QUANTIDADE
+FROM 
+	PROJETO PROJ, PESQPROJ PP, PESQUISADOR PESQ
+WHERE 
+	PROJ.IDPROJ = PP.IDPROJ AND
+	PP.IDPESQ = PESQ.IDPESQ 
+GROUP BY 
+	PROJ.DESCRICAO
+
+
+-- s. Obter a descrição dos projetos e o nome de todos os pesquisadores que trabalham em projetos de pesquisa, ordenados por projeto e por nome.
+
+SELECT 
+	PROJ.DESCRICAO AS PROJETO, PESQ.NOME AS QUANTIDADE
+FROM 
+	PROJETO PROJ, PESQPROJ PP, PESQUISADOR PESQ
+WHERE 
+	PROJ.IDPROJ = PP.IDPROJ AND
+	PP.IDPESQ = PESQ.IDPESQ
+	
+ORDER BY 
+	PROJ.DESCRICAO, PESQ.NOME
+
+
+-- t. Obter o número de projetos de pesquisa em andamento.
+SELECT 
+	PROJ.SITUACAO, COUNT (DISTINCT PP.IDPROJ) AS QUANTIDADE -- Distinct porque pega uma linha para cada pesquisador
+FROM 
+	PROJETO PROJ, PESQPROJ PP
+WHERE 
+	PROJ.IDPROJ = PP.IDPROJ AND
+	UPPER (PROJ.TIPO) = 'PESQUISA' AND
+	UPPER (PROJ.SITUACAO) = 'EM ANDAMENTO'	
+GROUP BY 
+	PROJ.SITUACAO
+
+
+-- u. Obter a quantidade de projetos de cada tipo.
+SELECT 
+	PROJ.TIPO, COUNT (DISTINCT PP.IDPROJ) AS QUANTIDADE
+FROM 
+	PROJETO PROJ, PESQPROJ PP
+WHERE 
+	PROJ.IDPROJ = PP.IDPROJ
+GROUP BY 
+	PROJ.TIPO	
+	
