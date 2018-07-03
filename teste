@@ -406,3 +406,16 @@ WHERE
 GROUP BY 
 	PROJ.TIPO	
 	
+--
+1.Como visões podem ser usadas como mecanismo de autorização?
+É utilizada para restringir o acesso a dados diretamente. Ex- em uma tabela departamento eu posso restringir aos usuários a ver o salario e cpf das pessoas. 
+2. Descreva os tipos de privilégios no nível de conta e no nível de relação (ou tabela).
+Nível de conta: estabelece os privilégios de cada conta de usuário.
+Nível de relação: O DBA pode controlar o privilégio p/ acessar cada tabela ou visão individual do bd.
+3. O que significa concessão e revogação de privilégios? 
+Concessão é dar privilégios aos usuários e revogação é tirar esses privilégios
+4 . Qual a diferença entre controle de acesso discricionário e obrigatório? 
+Discricionário- para conceder e revogar privilégios aos usuários
+Obrigatório-p/impor segurança multinível pela classificação de dados e usuários em vários níveis de segurança.
+5. Liste os tipos de privilégios disponíveis em SQL.
+Insert, update, delete e tbm select 
