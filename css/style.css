@@ -222,7 +222,7 @@ nav .container {
 }
 
 .header-content .image .img-element {
-  max-width: 750px;
+  max-width: 450px;
 }
 
 /* End Header */
@@ -357,3 +357,37 @@ nav .container {
 }
 
 /* End Portfolio */
+
+/* About */
+
+.about {
+  overflow: hidden;
+}
+
+.about img {
+  max-width: 450px;
+}
+
+.about .text {
+  margin-top: 1rem;
+}
+
+.skills {
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.skill {
+  margin: 1rem 0;
+}
+
+.skill-title {
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.about .column-1 {
+  position: relative;
+}
+
+/* End About */
