@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
-<body>
+<body class="stop-scrolling">
   
   <main>
     <header>
@@ -23,19 +23,23 @@
           <div class="links">
             <ul>
               <li>
-                <a href="#">Início</a>
+                <a href="#header">Início</a>
               </li>
               <li>
-                <a href="#">Sobre</a>
+                <a href="#portfolio">Portfólio</a>
               </li>
               <li>
-                <a href="#">Projetos</a>
+                <a href="#about">Sobre</a>
               </li>
               <li>
-                <a href="#">Contato</a>
+                <a href="#contact">Contato</a>
               </li>
               
             </ul>
+          </div>
+
+          <div class="hamburger-menu">
+            <div class="bar"></div>
           </div>
         </div>
       </nav>
@@ -44,14 +48,10 @@
         <div class="container grid-2">
           <div class="column-1">
             <h1 class="header-title">Adelar de Mello</h1>
-            <p class="text">Lorem Ipsum is simply dummy text 
-              of the printing and typesetting industry. Lorem 
-              Ipsum has been the industry's standard dummy 
-              text ever since the 1500s, when an unknown
-               printer took a galley of type and scrambled 
-               it to make a type specimen book.
+            <p class="text">Graduado em Tecnologia em Sistemas para Internet pelo Instituto Federal Farroupilha - Campus de Frederico Westphalen, Rio Grande do Sul.
+              Atualmente estou estudando sobre desenvolvimento web com a stack PHP e JavaScript.
             </p>
-            <a href="#" class="btn">Ver mais</a>
+            <a href="#about" class="btn">Ver mais</a>
           </div>
 
           <div class="column-2 image">
@@ -62,58 +62,8 @@
       </div>
     </header>
 
-    <section class="tecnologias section">
-      <div class="container">
-        <div class="section-header">
-          <h3 class="title" data-title="">Tecnologias</h3>
-          <p class="text" >Essas são as tecnologias que estou estudando:</p>
-        </div>
-      </div>
 
-      <div class="cards">
-        <div class="card-wrap">
-          <div class="card">
-            <div class="card-content">
-              <img src="./img/logo.svg" class="icon" alt="">
-              <h3 class="title-sm">Tecnologia 1</h3>
-              <p class="text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro libero hic corporis aspernatur rerum dolorem?
-              </p>
-              <a href="#" class="btn small">Ver mais</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-wrap">
-          <div class="card">
-            <div class="card-content">
-              <img src="./img/logo.svg" class="icon" alt="">
-              <h3 class="title-sm">Tecnologia 2</h3>
-              <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ipsa?
-              </p>
-              <a href="#" class="btn small">Ver mais</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-wrap">
-          <div class="card">
-            <div class="card-content">
-              <img src="./img/logo.svg" class="icon" alt="">
-              <h3 class="title-sm">Tecnologia 3</h3>
-              <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat sit magnam dolorum!
-              </p>
-              <a href="#" class="btn small">Ver mais</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </section>
-
-    <section class="portfolio section">
+    <section class="portfolio section" id="portfolio">
       <div class="background-bg"></div>
 
       <div class="container">
@@ -136,7 +86,7 @@
       </div>
     </section>
 
-    <section class="about section">
+    <section class="about section" id="about">
       <div class="container">
         <div class="section-header">
           <h3 class="title">Sobre</h3>
@@ -144,14 +94,10 @@
 
         <div class="section-body grid-2">
           <div class="column-1">
-            <h3 class="title-sm">Olá</h3>
+            <h3 class="title-sm">Olá, meu nome é Adelar de Mello.</h3>
             <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-               vitae, nam accusamus aperiam placeat repellat doloremque molestias. 
-               Rem, provident! Dicta temporibus nisi deserunt, laborum dignissimos 
-               illo illum repellat tempore voluptates error officiis, quibusdam vel sit, 
-               magnam facere! Aliquid sed labore, optio laboriosam placeat eaque,
-                saepe illum quod nihil, suscipit perferendis.
+              Sou graduado em Tecnologia em Sistemas para Internet pelo Instituto Federal Farroupilha - Campus de Frederico Westphalen, Rio Grande do Sul. 
+              Atualmente estou estudando sobre desenvolvimento web com a stack PHP e JavaScript.
             </p>
             <div class="skills">
               <div class="skill html">
@@ -183,70 +129,49 @@
       </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="container">
         <div class="contact-box">
           <div class="contact-info">
-            <h3 class="title">Entre em contato</h3>
-            <p>Para mais informações entre em conato:
-            </p>
+            <h3 class="title ">Entre em contato.</h3>
+            <p class="text ">Para mais informações entre em contato:</p>
+            
             <div class="information-wrap">
               <div class="information">
                 <div class="contact-icon">
-                  <i class="fas fa-paper-plane"></i>
+                  <i class="fas fa-envelope"></i>
                 </div>
-                <p class="info-text">email@email.com</p>
+                <a href="mailto:adelarmello8@gmail.com" target="_blank">
+                  <p class="info-text">adelarmello8@gmail.com</p>
+                </a>
               </div>
 
               <div class="information">
                 <div class="contact-icon">
-                  <i class="fas fa-phone-alt"></i>
+                  <i class="fab fa-linkedin-in" ></i>
                 </div>
-                <p class="info-text">55-55555-5555</p>
+                <a href="https://www.linkedin.com/in/adelar-de-mello-1948a1168/" target="_blank">
+                  <p class="info-text">Linkedin</p>
+                </a>
               </div>
 
               <div class="information">
                 <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <p class="info-text">Rio Grande do Sul</p>
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <a href="https://www.google.com/maps/place/Rio+Grande+do+Sul/@-30.3416648,-58.1631899,6z/data=!3m1!4b1!4m5!3m4!1s0x9504720c40b45803:0xad9fb3dbaf9f73de!8m2!3d-29.3646459!4d-51.6657692" target="_blank">
+                  <p class="info-text">Rio Grande do Sul</p>
+                </a>
               </div>
             </div> 
           </div>
 
-
-          <div class="contact-info">
-            <h3 class="title">Redes Sociais</h3>
-            <p>Me siga nas redes sociais.
-            </p>
-            <div class="information-wrap">
-              <div class="information">
-                <div class="contact-icon">
-                <i class="fab fa-facebook-f"></i>
-              </div>
-              <p class="info-text">Faceboock</p>
-              </div>
-
-              <div class="information">
-                <div class="contact-icon">
-                  <i class="fab fa-instagram"></i>
-                </div>
-                <p class="info-text">Instagran</p>
-              </div>
-
-              <div class="information">
-                <div class="contact-icon">
-                  <i class="fab fa-linkedin-in"></i>
-                </div>
-                <p class="info-text">Linkedin</p>
-              </div>
-            </div> 
-          </div>
 
         </div>
       </div>
     </section>
 
+    
   </main>
   <script src="./js/app.js"></script>
 
