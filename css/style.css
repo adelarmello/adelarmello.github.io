@@ -373,6 +373,10 @@ nav.open .links {
   background-color: var(--main-color);
 }
 
+.contact .container {
+  text-align: center;
+}
+
 .contact-box {
   width: 100%;
   background-color: var(--light-one);
@@ -381,9 +385,8 @@ nav.open .links {
   padding: 5.5rem 4.5rem;
 }
 
-.contact-info .title:after {
-  left: 0;
-  transform: initial;
+.contact-info {
+  padding-right: 2rem;
 }
 
 .information-wrap {
@@ -422,6 +425,28 @@ nav.open .links {
 }
 
 /*  End Contact */
+
+/* Footer */
+.footer {
+  padding: 5rem 0;
+  background-color: var(--light-one);
+}
+.footer .container {
+  text-align: center;
+}
+.contact .container {
+  text-align: center;
+}
+
+.footer .title {
+  margin-bottom: 1.3rem;
+}
+
+.footer .text {
+  align-items: center;
+  max-width: 1000px;
+}
+/* End Footer */
 
 /* Responsive */
 
@@ -718,6 +743,9 @@ nav.open .links {
 
   .contact:before {
     background-size: 200%;
+  }
+  .contact-icon {
+    display: none;
   }
 }
 
